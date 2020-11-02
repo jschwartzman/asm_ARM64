@@ -1,0 +1,12 @@
+js@raspberry:~/Development/asm_ARM64/gpiomem$ git log --diff-filter=D --summary
+commit 991becf83bd5c9334afb4744546f3a3ff16b82ab
+Author: John Schwartzman <john@fortesystem.com>
+Date:   Sat Feb 15 22:24:19 2020 -0500
+
+    Simplified writeUnits macro
+
+ delete mode 100644 gpiomem/Makefile
+
+js@raspberry:~/Development/asm_ARM64/gpiomem$ git checkout 991becf83bd5c9334afb4744546f3a3ff16b82ab^1 Makefile
+
+NB: the ^1 at the end of the commit id is important.
