@@ -17,14 +17,14 @@ release: $(PROG).asm $(PROG).c Makefile
 	@source ../maketest.sh && test release debug
 	as -o $(PROG).obj $(PROG).asm
 	objdump -d $(PROG).obj > $(PROG).lst
-	gcc -no-pie $(PROG).c $(PROG).obj -o $(PROG)
+	gcc $(PROG).c $(PROG).obj -o $(PROG)
 	gcc -D c_version $(PROG).c
 
 debug: $(PROG).asm $(PROG).c Makefile
 	@source ../maketest.sh && test debug release
 	as -g -o $(PROG).obj $(PROG).asm
 	objdump -d $(PROG).obj > $(PROG).lst
-	gcc -g -no-pie $(PROG).c $(PROG).obj -o $(PROG)
+	gcc -g $(PROG).c $(PROG).obj -o $(PROG)
 	gcc -g -D c_version $(PROG).c
 
 clean:
